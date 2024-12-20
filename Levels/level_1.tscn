@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://d3377ei2ukdv6"]
 
 [ext_resource type="Texture2D" uid="uid://bhatek1wuwy0i" path="res://Art/MyFirstSpriteSheet.png" id="1_lua0u"]
-[ext_resource type="Script" path="res://Levels/Level1Path.cs" id="2_0lvvg"]
-[ext_resource type="PackedScene" uid="uid://yvf48fhhqw8" path="res://Enemies/enemy_placeholder.tscn" id="2_jgh88"]
+[ext_resource type="Script" path="res://Levels/PathSpawner.cs" id="2_qag02"]
+[ext_resource type="PackedScene" uid="uid://kuwho7jppxrw" path="res://place_holder-level_1_path.tscn" id="3_22phv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u354l"]
 texture = ExtResource("1_lua0u")
@@ -32,13 +32,8 @@ layer_0/tile_data = PackedInt32Array(-17, 65537, 0, 65519, 65537, 0, -589842, 65
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2, 2)
 
-[node name="Path2D" type="Path2D" parent="."]
+[node name="PathSpawner" type="Path2D" parent="."]
 curve = SubResource("Curve2D_lxw7k")
+script = ExtResource("2_qag02")
 
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(-340, -47)
-rotation = -0.00341296
-loop = false
-script = ExtResource("2_0lvvg")
-
-[node name="Enemy_Placeholder" parent="Path2D/PathFollow2D" instance=ExtResource("2_jgh88")]
+[node name="Level1Path" parent="PathSpawner" instance=ExtResource("3_22phv")]
