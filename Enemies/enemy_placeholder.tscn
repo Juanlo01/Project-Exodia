@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://yvf48fhhqw8"]
+
+[ext_resource type="Texture2D" uid="uid://bs5oaiqm40p70" path="res://Art/PlaceHolderEnemy-0001.png" id="1_i4t4i"]
+
+[node name="Enemy_Placeholder" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
+motion_mode = 1
+wall_min_slide_angle = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_i4t4i")
