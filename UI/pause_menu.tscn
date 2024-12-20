@@ -1,0 +1,70 @@
+[gd_scene load_steps=3 format=3 uid="uid://bmfpw5iqhr4qw"]
+
+[ext_resource type="Script" path="res://UI/PauseMenu.cs" id="1_apvth"]
+[ext_resource type="Theme" uid="uid://6oexdromho0y" path="res://UI/game_theme.tres" id="2_5v182"]
+
+[node name="PauseMenu" type="Control"]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_apvth")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.53
+anchor_top = 0.5
+anchor_right = 0.53
+anchor_bottom = 0.5
+offset_left = -309.4
+offset_top = -157.0
+offset_right = 119.6
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.44, 1.45675)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_5v182")
+text = "=PAUSE="
+
+[node name="SaveButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5v182")
+text = "Save"
+
+[node name="LoadButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5v182")
+text = "Load
+"
+
+[node name="ResumeButton" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5v182")
+text = "Resume"
+
+[node name="ExitGame" type="Button" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5v182")
+text = "Exit
+"
+
+[connection signal="pressed" from="Panel/VBoxContainer/ResumeButton" to="." method="OnResumeButtonPressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/ExitGame" to="." method="OnExitButtonPressed"]
